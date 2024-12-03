@@ -1,17 +1,22 @@
 
-//Get input value
-const userChoice = parseInt(document.getElementById("userChoiceNum").value);
-
-//Take result in variable
-const showResult = document.getElementById("result");
-
-// Generate computer's random choice
-const computerChoice = Math.floor(Math.random() * 3);
+const choices = ["Rock", "Paper", "Scissor"];
 
 // Add event listener to the submit button
 document.getElementById("submit").addEventListener("click", function() {
 
-// Determine the result
+    //Get input value
+    const userChoice = parseInt(document.getElementById("userChoiceNum").value);
+    
+    //validation for user input.
+    if (userChoice < 0|| userChoice > 2|| isNaN(userChoice)){
+        alert("Invalid Input! Please choose among 0,1 & 2.");
+        return;
+    }
+
+    // Generate computer's random choice
+    const computerChoice = Math.floor(Math.random() * 3);
+
+    // Determine the result
     if (userChoice === computerChoice) {
         result = "It's a Tie!";
     } else if (
@@ -23,8 +28,18 @@ document.getElementById("submit").addEventListener("click", function() {
     } else {
         result = "You Lose!";
     }
-// Display the result
-    showResult.innerHTML = `<p >${result}</p>`;
+    //Display user and computer choices.   
+    const useChoiceText = choices[userChoice];
+    const computerChoiceText = choices[computerChoice];
+
+    //Take result in variable
+    const showResult = document.getElementById("result");
+
+    // Display the result
+    showResult.innerHTML = `<p >You choose ${useChoiceText}</p> 
+    <p >Computer choose ${computerChoiceText}</p> 
+    <p >${result}</p>`;
+
 });
 
 
