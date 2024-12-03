@@ -1,4 +1,5 @@
 
+//Took array elements
 const choices = ["Rock", "Paper", "Scissor"];
 
 // Add event listener to the submit button
@@ -36,9 +37,9 @@ document.getElementById("submit").addEventListener("click", function() {
     const showResult = document.getElementById("result");
 
     // Display the result
-    showResult.innerHTML = `<p >You choose ${useChoiceText}</p> 
-    <p >Computer choose ${computerChoiceText}</p> 
-    <p >${result}</p>`;
+    showResult.innerHTML = `<p class="youChoose" >You choose ${useChoiceText}</p> 
+    <p class="compChoose">Computer choose ${computerChoiceText}</p> 
+    <p class="winner">${result}</p>`;
 
 });
 

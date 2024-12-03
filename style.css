@@ -43,3 +43,12 @@ body {
 #userChoiceNum:hover{
     background-color: #d1aaaa;
 }
+.youChoose{
+    background-color: #d39393;
+}
+.compChoose{
+    background-color: #eca0a0;
+}
+.winner{
+    background-color: #f1516c;
+}
